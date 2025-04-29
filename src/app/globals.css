@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  font-family: var(--font-plus-jakarta-sans);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
