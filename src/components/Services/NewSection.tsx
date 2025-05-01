@@ -68,10 +68,10 @@ const NewSection = () => {
       <Box sx={{ mt: 8, display: 'flex', gap: '4rem' }}>
         {/* Left Side - Text Section */}
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <Typography variant="h2" sx={{ fontSize: '3rem', fontWeight: 700, color: '#333' }}>
+          <Typography variant="h2" sx={{ fontSize: '3rem', fontWeight: 700, color: 'white' }}>
             Our Comprehensive
           </Typography>
-          <Box sx={{ height: '80px', position: 'relative', overflow: 'hidden' }}>
+          <Box sx={{ height: '80px', position: 'relative', overflow: 'hidden', color: 'white' }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentServiceIndex}
@@ -83,6 +83,7 @@ const NewSection = () => {
                 <Typography variant="h1" sx={{ 
                   fontSize: '4rem', 
                   fontWeight: 700,
+                  color: 'white',
                   background: 'black',
                   backgroundSize: '300% 300%',
                   WebkitBackgroundClip: 'text',
@@ -93,10 +94,10 @@ const NewSection = () => {
               </motion.div>
             </AnimatePresence>
           </Box>
-          <Typography variant="h2" sx={{ fontSize: '3rem', fontWeight: 700, color: '#333' }}>
+          <Typography variant="h2" sx={{ fontSize: '3rem', fontWeight: 700, color: 'white' }}>
             Solutions
           </Typography>
-          <Typography variant="body1" sx={{ fontSize: '1.1rem', color: '#666', mt: 2 }}>
+          <Typography variant="body1" sx={{ fontSize: '1.1rem', color: 'white', mt: 2 }}>
             We offer a comprehensive range of services designed to help your business thrive in the digital landscape. Our team of experts is dedicated to delivering exceptional results.
           </Typography>
         </Box>

@@ -1,91 +1,61 @@
+'use client';
+
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#1D1C3F',
-      light: '#2A2957',
-      dark: '#14132B',
+      main: '#00d8ff', // Cyan
+      light: '#7cff67', // Green
+      dark: '#00b8d4',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#00bcd4',
-      light: '#00a0b4',
-      dark: '#008ba3',
+      main: '#7cff67', // Green
+      light: '#9fff8f',
+      dark: '#5cd647',
+      contrastText: '#ffffff',
     },
     background: {
-      default: '#ffffff',
-      paper: '#f5f5f5',
+      default: 'rgba(17, 17, 23, 0.95)',
+      paper: 'rgba(255, 255, 255, 0.1)',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: 'rgba(255, 255, 255, 0.7)',
     },
   },
   typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontSize: '2.5rem',
       fontWeight: 700,
-      lineHeight: 1.2,
     },
     h2: {
-      fontSize: '2rem',
-      fontWeight: 600,
-      lineHeight: 1.3,
+      fontWeight: 700,
     },
     h3: {
-      fontSize: '1.75rem',
       fontWeight: 600,
-      lineHeight: 1.3,
     },
-    h4: {
-      fontSize: '1.5rem',
-      fontWeight: 600,
-      lineHeight: 1.4,
-    },
-    h5: {
-      fontSize: '1.25rem',
-      fontWeight: 500,
-      lineHeight: 1.4,
-    },
-    h6: {
-      fontSize: '1rem',
-      fontWeight: 500,
-      lineHeight: 1.4,
-    },
-    body1: {
-      fontSize: '1rem',
-      lineHeight: 1.5,
-    },
-    body2: {
-      fontSize: '0.875rem',
-      lineHeight: 1.5,
-    },
-  },
-  shape: {
-    borderRadius: 8,
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
+          borderRadius: '12px',
           textTransform: 'none',
-          borderRadius: '8px',
-          padding: '8px 16px',
-        },
-        contained: {
-          boxShadow: 'none',
-          '&:hover': {
-            boxShadow: '0px 2px 4px rgba(0,0,0,0.1)',
-          },
+          fontWeight: 600,
+          padding: '12px 24px',
         },
       },
     },
-    MuiCard: {
+    MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: '12px',
-          boxShadow: '0px 4px 12px rgba(0,0,0,0.05)',
+          backgroundImage: 'none',
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
         },
       },
     },
   },
-});
-
-export default theme; 
+}); 

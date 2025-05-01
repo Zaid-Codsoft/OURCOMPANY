@@ -59,7 +59,7 @@ const insights = [
 
 export default function FeaturedInsights() {
   return (
-    <Box sx={{ py: 12, background: 'linear-gradient(180deg, #ffffff 0%, #f0f7f8 100%)' }}>
+    <Box sx={{ py: 12 }}>
       <Container maxWidth="lg" sx={{ position: 'relative' }}>
         <Box sx={{ 
           display: 'flex', 
@@ -91,7 +91,7 @@ export default function FeaturedInsights() {
               sx={{
                 fontWeight: 700,
                 mb: 2,
-                color: '#1D1C3F',
+                color: 'white',
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 maxWidth: '600px'
               }}
@@ -101,7 +101,7 @@ export default function FeaturedInsights() {
             <Typography
               variant="h4"
               sx={{
-                color: '#666',
+                color: 'white',
                 mb: 4,
                 fontSize: { xs: '1.5rem', md: '2rem' },
                 fontWeight: 400
@@ -114,7 +114,7 @@ export default function FeaturedInsights() {
               component={Link}
               href="/blog"
               sx={{
-                backgroundColor: '#00bcd4',
+                // backgroundColor: '#00bcd4',
                 color: 'white',
                 px: 4,
                 py: 1.5,

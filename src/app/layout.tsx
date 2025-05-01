@@ -1,12 +1,11 @@
-import type { Metadata } from 'next';
-import type { Viewport } from 'next/dist/lib/metadata/types/extra-types';
+import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import './globals.css';
-import Providers from '../components/Providers';
 import Header from '../components/Header/Header';
 import StickyContact from '../components/StickyContact/StickyContact';
 import Footer from '../components/Footer/Footer';
 import Script from 'next/script';
+import ThemeRegistry from '../components/ThemeRegistry';
+import AuroraBackground from '../components/AuroraBackground';
 
 // Initialize Plus Jakarta Sans font with optimized loading
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -14,17 +13,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: 'swap',
   preload: true,
   fallback: ['system-ui', 'arial'],
-  variable: '--font-plus-jakarta-sans',
 });
 
 export const metadata: Metadata = {
-  title: 'Business Website',
-  description: 'A modern business website built with Next.js',
-  manifest: '/manifest.json',
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
+  title: 'AZ PRO - Professional Services',
+  description: 'Professional services for your business needs',
 };
 
 export const viewport: Viewport = {
@@ -38,51 +31,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        
-        {/* Preload critical assets */}
-        <link rel="preload" href="/images/logo.png" as="image" />
-        <link rel="preload" href="/images/hero-bg.jpg" as="image" />
-        
-        {/* Inline critical CSS */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          :root {
-            --font-plus-jakarta-sans: ${plusJakartaSans.style.fontFamily};
-          }
-          body {
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-plus-jakarta-sans);
-          }
-        `}} />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Professional services for your business needs" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={plusJakartaSans.className} suppressHydrationWarning>
-        <Providers>
+        <ThemeRegistry>
+          <AuroraBackground />
           <Header />
           <main>
             {children}
           </main>
           <StickyContact />
           <Footer />
-        </Providers>
+        </ThemeRegistry>
 
         {/* Defer non-critical scripts */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js"
-          strategy="lazyOnload"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'YOUR-GA-ID');
+            gtag('config', 'G-XXXXXXXXXX');
           `}
         </Script>
       </body>

@@ -3,7 +3,7 @@
 import { Container, Typography, Box, Button, CircularProgress, TextField } from '@mui/material';
 import dynamic from 'next/dynamic';
 import { Suspense, useState, useEffect } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 // Dynamically import components with proper SSR configuration
 const Hero = dynamic(() => import('../components/Hero/Hero'), { 
@@ -443,7 +443,7 @@ export default function Home() {
         </Box>
 
         {/* Life at Our Company Section */}
-        <Box sx={{ py: 12, backgroundColor: '#1D1C3F' }}>
+        <Box sx={{ py: 12 }}>
           <Container maxWidth="lg">
             <Typography
               variant="h2"
@@ -502,7 +502,7 @@ export default function Home() {
                 <Box
                   key={index}
                   sx={{
-                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    // backgroundColor: 'rgba(255,255,255,0.05)',
                     borderRadius: 3,
                     p: 4,
                     transition: 'all 0.3s ease',
